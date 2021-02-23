@@ -1,7 +1,7 @@
 const { User, UserSession } = require("../models");
 const bcrypt = require("bcrypt");
 
-// methods for the booksController
+// methods for the userController
 module.exports = {
   findById: function (req, res) {
     User.findById(req.params.id)
@@ -12,7 +12,7 @@ module.exports = {
       });
   },
   login: function (req, res) {
-    User.findOne(req.body.email)
+    User.findOne({ email: req.body.email })
       .then(async function (dbUser) {
         if (!dbUser) {
           res.send({ user: false, message: "No user with that email" });
@@ -35,6 +35,7 @@ module.exports = {
       })
       .catch((err) => {
         res.send(err);
+        console.log(err);
         console.log("unexpected error");
       });
   },

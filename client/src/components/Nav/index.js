@@ -15,7 +15,7 @@ const TopNav = () => {
 
   return (
     <div id="topNav">
-      <label for="search">Search</label>
+      <label htmlFor="search">Search</label>
       <input id="search" placeholder="...Search"></input>
       {links}
     </div>

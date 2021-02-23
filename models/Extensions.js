@@ -41,6 +41,10 @@ const extensionsSchema = new Schema({
       ref: "Order",
     },
   ],
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const Extensions = mongoose.model("Extensions", extensionsSchema);

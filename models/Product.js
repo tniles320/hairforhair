@@ -33,6 +33,10 @@ const productSchema = new Schema({
       ref: "Order",
     },
   ],
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const Product = mongoose.model("Product", productSchema);
