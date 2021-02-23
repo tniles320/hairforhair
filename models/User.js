@@ -22,6 +22,12 @@ const userSchema = new Schema({
     trim: true,
     required: "Password is required",
   },
+  orders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Order",
+    },
+  ],
 });
 
 const User = mongoose.model("User", userSchema);
